@@ -21,3 +21,21 @@ document.write(`
     <p>O carro popular ${carroPopular.marca}, Modelo ${carroPopular.modelo}, é do ano ${carroPopular.ano} e quando ele buzina faz ${carroPopular.buzinar()}</p>
     `);
 
+// Criando uma nova INSTÂNCIA : Carro Conversível
+const carroConversivel = new Carro();
+carroConversivel.marca = "Chevrolet";
+carroConversivel.modelo = "Camaro";
+carroConversivel.ano = "2026";
+
+// Adicionando um NOVO ATRIBUTO (não previsto na classe)
+carroConversivel.corNeon = "Azul"
+// Adicionando um NOVO METODO (não previsto na classe)
+carroConversivel.turbo = function(){
+    return "Vrummm, o carro está acelerando!"
+};
+document.write(
+    `O carro ${carroConversivel.marca} ${carroConversivel.modelo} tem neon da cor ${carroConversivel.corNeon}`
+)
+document.write(
+    `<p>${carroConversivel.turbo()}</p>`
+)

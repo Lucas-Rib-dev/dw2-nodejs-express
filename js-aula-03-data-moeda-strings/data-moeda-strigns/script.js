@@ -59,11 +59,17 @@ document.write(`<p>${futuroSalario.toFixed(0)}</p>`);
 // TROCANDO O IDENTIFICADOR DE CASAS DECIMAIS
 document.write(`<p>${futuroSalario.toFixed(2).replace(".", ",")}</p>`);
 
-// FORMATANDO PARA REAL
+// FORMATANDO PARA DOLAR
 document.write(`<p>
         ${futuroSalario.toLocaleString("en", {
           style: "currency",
           currency: "USD",
+        })}
+</p>`);
+document.write(`<p>
+        ${futuroSalario.toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL",
         })}
 </p>`);
 
@@ -85,4 +91,4 @@ const cidadeFormatada = cidade.split(" ").map(palavra => palavra.charAt(0).toUpp
 document.write(`<p>${cidadeFormatada}</p>`);
 
 // CONTANDO O NÚMERO DE CARACTERES
-document.write(`<p>Seu nome tem ${nome.replace(/\s/g, "")length} letras.</p>`);
+document.write(`<p>Seu nome tem ${nome.replace(/\s/g, "").length} letras.</p>`)

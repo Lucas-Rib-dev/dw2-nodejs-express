@@ -1,0 +1,18 @@
+{
+  "name": "node.js-aula-04-introducao-ao-express",
+  "version": "1.0.0",
+  "description": "Projeto inicial para aprendizagem do Node.js",
+  "license": "ISC",
+  "author": "Lucas",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon index.js"
+  },
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}

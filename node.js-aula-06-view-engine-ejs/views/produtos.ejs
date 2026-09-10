@@ -1,0 +1,15 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+    <h4 style="text-align: center;">Pagina de produtos</h4>
+
+    <%# comentário... #%>
+    <%= produtos %>
+     <% produtos.forEach(produto => { %>
+        <p>Produto: <%= produto.nome %> </p>
+        <p>Marca: <%= produto.marca %> </p>
+        <p>Preço: <%= produto.preco %> </p>
+        <br>
+     <% }) %>
+</body>
+</html>
+<%- include ('partials/footer.ejs') %>

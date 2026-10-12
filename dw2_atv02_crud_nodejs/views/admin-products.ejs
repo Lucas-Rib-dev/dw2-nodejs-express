@@ -1,0 +1,9 @@
+<%- include('Partials/navbar.ejs') %>
+<section class="admin-hero"><div><div class="eyebrow">PAINEL ADMINISTRATIVO</div><h1>GERENCIAR <span>PRODUTOS.</span></h1><p>Cadastre, consulte, edite ou exclua itens da AMPLI Store.</p></div><a class="button button-primary" href="/admin/produtos/novo">+ Novo produto</a></section>
+<section class="admin-section">
+<% if (message) { %><div class="admin-message"><%= message %></div><% } %>
+<div class="admin-topline"><div><strong><%= products.length %></strong> produto(s) cadastrados</div><a href="/produtos" class="text-link">Ver loja ↗</a></div>
+<div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Produto</th><th>Categoria</th><th>Preço</th><th>Ações</th></tr></thead><tbody>
+<% products.forEach(p => { %><tr><td><div class="admin-product"><img src="<%= p.image %>" alt=""><div><strong><%= p.name %></strong><small>#<%= p.id %> · <%= p.tag %></small></div></div></td><td><%= p.category %></td><td><strong><%= money(p.price) %></strong></td><td><div class="admin-actions"><a class="button button-small" href="/admin/produtos/<%= p.id %>/editar">Editar</a><form method="post" action="/admin/produtos/<%= p.id %>/excluir" onsubmit="return confirm('Tem certeza que deseja excluir este produto?')"><button class="button button-small button-danger" type="submit">Excluir</button></form></div></td></tr><% }) %>
+<% if (!products.length) { %><tr><td colspan="4">Nenhum produto cadastrado.</td></tr><% } %></tbody></table></div>
+</section><%- include('Partials/footer.ejs') %>

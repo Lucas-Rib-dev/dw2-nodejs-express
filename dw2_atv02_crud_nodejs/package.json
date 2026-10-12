@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14",
+    "mysql2": "^3.14.1",
+    "dotenv": "^16.5.0"
+  },
+  "name": "ampli-store",
+  "version": "1.0.0",
+  "description": "Loja de música e basquete com CRUD de produtos usando Node.js, Express, EJS e MySQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "npx nodemon index.js"
+  },
+  "repository": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {},
+  "homepage": ""
+}

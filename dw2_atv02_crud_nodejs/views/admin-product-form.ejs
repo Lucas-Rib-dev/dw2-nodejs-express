@@ -1,0 +1,12 @@
+<%- include('Partials/navbar.ejs') %>
+<section class="admin-hero"><div><div class="eyebrow">PAINEL ADMINISTRATIVO</div><h1><%= product ? 'EDITAR' : 'NOVO' %> <span>PRODUTO.</span></h1><p>Os dados salvos aqui aparecem automaticamente no catálogo da loja.</p></div><a class="button button-outline" href="/admin/produtos">← Voltar ao painel</a></section>
+<section class="admin-section"><div class="admin-form-card">
+<% if (error) { %><div class="admin-error"><%= error %></div><% } %>
+<form method="post" action="<%= formAction %>" class="product-admin-form">
+<label>Nome do produto<input name="name" required maxlength="150" value="<%= product ? product.name : '' %>" placeholder="Ex.: Guitarra elétrica"></label>
+<div class="admin-form-row"><label>Categoria<select name="category" required><option value="">Selecione...</option><% categories.forEach(c => { %><option value="<%= c %>" <%= product && product.category === c ? 'selected' : '' %>><%= c %></option><% }) %></select></label><label>Preço (R$)<input name="price" type="number" min="0" step="0.01" required value="<%= product ? product.price : '' %>" placeholder="0,00"></label></div>
+<label>Etiqueta curta<input name="tag" required maxlength="60" value="<%= product ? product.tag : 'DESTAQUE' %>" placeholder="MAIS VENDIDO"></label>
+<label>Descrição<textarea name="description" required rows="4" placeholder="Descreva o produto"><%= product ? product.description : '' %></textarea></label>
+<label>URL da imagem<input name="image" type="url" required value="<%= product ? product.image : '' %>" placeholder="https://..."></label>
+<div class="admin-form-actions"><button class="button button-primary" type="submit"><%= product ? 'Salvar alterações' : 'Cadastrar produto' %> →</button><a class="button button-outline" href="/admin/produtos">Cancelar</a></div>
+</form></div></section><%- include('Partials/footer.ejs') %>

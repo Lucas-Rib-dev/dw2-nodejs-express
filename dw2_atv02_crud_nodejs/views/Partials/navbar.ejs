@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101116"><meta name="description" content="AMPLI Store — instrumentos musicais, guitarras e artigos para basquete.">
+<title><%= typeof pageTitle !== 'undefined' ? pageTitle + ' | AMPLI Store' : 'AMPLI Store — som, jogo e atitude' %></title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css"><link rel="icon" href="/images/icon.ico">
+</head><body>
+<div class="announcement">SOM ALTO. JOGO LIMPO. <span>Encontre seu próximo favorito.</span></div>
+<nav class="navbar"><a href="/" class="brand" aria-label="AMPLI Store início"><span class="brand-mark">A<span>+</span></span><span class="brand-name">AMPLI<small>STORE</small></span></a>
+<div class="nav-links"><a href="/produtos">Todos os produtos</a><a href="/produtos?categoria=Guitarras">Guitarras</a><a href="/produtos?categoria=Instrumentos">Instrumentos</a><a href="/produtos?categoria=Basquete">Basquete</a><a href="/admin/produtos">Gerenciar</a></div>
+<div class="nav-actions"><a class="search-link" href="/produtos" aria-label="Buscar produtos">⌕</a><button class="cart-button" type="button" id="cart-toggle">Sacola <span id="cart-count">0</span></button><button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button></div></nav>
+<aside class="cart-panel" id="cart-panel" aria-label="Sacola de compras" aria-hidden="true"><div class="cart-head"><h2>Sua sacola</h2><button id="cart-close" aria-label="Fechar sacola">×</button></div><div id="cart-items" class="cart-items"><p class="cart-empty">Sua sacola está vazia por enquanto.</p></div><div class="cart-bottom"><div class="cart-total"><span>Total</span><strong id="cart-total">R$ 0,00</strong></div><button id="checkout-button" class="button button-primary full-width">Finalizar pedido</button><p class="cart-note">Demonstração de loja — checkout não processa pagamentos.</p></div></aside><div class="cart-overlay" id="cart-overlay"></div>
+<main>

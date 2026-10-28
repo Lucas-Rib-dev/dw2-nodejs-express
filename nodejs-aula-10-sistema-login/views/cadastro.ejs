@@ -1,0 +1,27 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+<div class="container col-12 col-md-12">
+    <div class="card mt-4">
+        <div class="card-header">
+            <h2>Cadastro de Usuário</h2>
+        </div>
+        <div class="card-body">
+            <!-- Formulário de cadastro -->
+            <form action="/cadastro/novo" method="POST">
+                <!-- E-mail -->
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu e-mail" required>
+                <!-- Senha -->
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Digite sua senha" required>
+                <!-- Botão de enviar -->
+                 <button type="submit" class="btn btn-success btn-block mt-2">
+                    Cadastrar
+                </button>
+            </form>
+            <hr>
+            <h6>Já possui conta? <a href="/login">Faça o login!</a></h6>
+        </div>
+    </div>
+</div>
+<%- include ('partials/footer.ejs') %>

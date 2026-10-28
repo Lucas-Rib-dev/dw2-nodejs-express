@@ -1,0 +1,30 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+<div class="container col-12 col-md-4">
+    <div class="card mt-4">
+        <div class="card-header">
+            <h2>Login de Administrador</h2>
+        </div>
+        <div class="card-body m-auto">
+            <p style="color: red; font-size: 0.7em;">
+                Você precisa estar logado para acessar os recursos do painel administrativo.
+            </p>
+            <!-- Formulário de login -->
+            <form action="/autenticar" method="POST">
+                <!-- E-mail -->
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu e-mail" required>
+                <!-- Senha -->
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Digite sua senha" required>
+                <!-- Botão de enviar -->
+                 <button type="submit" class="btn btn-success btn-block mt-2 w-100">
+                    Entrar
+                </button>
+            </form>
+            <hr>
+            <h6>Não possui conta? <a href="/cadastro">Cadastre-se!</a></h6>
+        </div>
+    </div>
+</div>
+<%- include ('partials/footer.ejs') %>

@@ -1,0 +1,38 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+<!-- exibindo a flash message -->
+<% if (messages.danger){ %>
+    <div class="alert alert-danger flash-message alert-dismissible fade show">
+        <button class="btn-close" data-bs-dismiss="alert"></button>
+        <%= messages.danger %>
+</div>
+<% } %>
+
+<div class="container col-12 col-md-12">
+    <div class="card mt-4">
+        <div class="card-header">
+            <h2>Cadastro de Usuário</h2>
+        </div>
+        <div class="card-body">
+            <!-- Formulario de cadastro  -->
+             <form action="/cadastro/novo" method="POST">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu e-mail" required>
+                <!-- Senha  -->
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Digite sua senha" required>
+                <!-- Botão  -->
+                 <button type="submit" class="btn btn-success btn-block mt-2">
+                    Cadastrar
+                 </button>
+             </form>
+             <hr>
+             <h6>Já possui conta? <a href="/login">Faça o Login!</a></h6>
+        </div>
+    </div>
+</div>
+
+
+
+<%- include ('partials/footer.ejs') %>
